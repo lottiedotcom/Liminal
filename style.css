@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    height: 100dvh; /* Fixes mobile address bar issues */
+    height: 100dvh; 
     overflow: hidden;
 }
 
@@ -52,9 +52,7 @@ body {
     box-sizing: border-box;
 }
 
-/* The 2000s Pop-Up Box */
 #ui-box {
-    background: #d4d0c8; 
     border: 2px solid #fff;
     border-right-color: #404040;
     border-bottom-color: #404040;
@@ -67,6 +65,15 @@ body {
     cursor: pointer; 
 }
 
+/* Dynamic Background Colors */
+.narration-bg {
+    background: #d4d0c8; /* Vintage tech gray */
+}
+
+.dialogue-bg {
+    background: #e3d5d9; /* Lighter pink-gray for her speaking */
+}
+
 #dialogue-text {
     color: #000;
     font-size: 15px;
@@ -75,8 +82,8 @@ body {
     flex-grow: 1;
     overflow-y: auto;
     margin-bottom: 10px;
-    white-space: pre-wrap; /* Forces spaces and line breaks to render properly */
-    word-wrap: break-word; /* Prevents text from running off screen */
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
 }
 
 #choices-container {
@@ -85,7 +92,6 @@ body {
     gap: 8px;
 }
 
-/* Blocky Tech Buttons */
 .choice-btn {
     background: #000080; 
     color: #fff;
@@ -105,4 +111,3 @@ body {
     border-right-color: #fff;
     border-bottom-color: #fff;
 }
-
