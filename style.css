@@ -7,6 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    height: 100dvh; /* Fixes mobile address bar issues */
     overflow: hidden;
 }
 
@@ -14,8 +15,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 480px;
-    height: 100vh;
-    max-height: 850px;
+    height: 100%;
     background: #000;
     display: flex;
     flex-direction: column;
@@ -54,7 +54,7 @@ body {
 
 /* The 2000s Pop-Up Box */
 #ui-box {
-    background: #d4d0c8; /* Classic vintage tech gray */
+    background: #d4d0c8; 
     border: 2px solid #fff;
     border-right-color: #404040;
     border-bottom-color: #404040;
@@ -64,7 +64,7 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    cursor: pointer; /* Lets them know they can click */
+    cursor: pointer; 
 }
 
 #dialogue-text {
@@ -75,6 +75,8 @@ body {
     flex-grow: 1;
     overflow-y: auto;
     margin-bottom: 10px;
+    white-space: pre-wrap; /* Forces spaces and line breaks to render properly */
+    word-wrap: break-word; /* Prevents text from running off screen */
 }
 
 #choices-container {
@@ -85,7 +87,7 @@ body {
 
 /* Blocky Tech Buttons */
 .choice-btn {
-    background: #000080; /* Harsh tech blue */
+    background: #000080; 
     color: #fff;
     border: 2px solid #fff;
     border-right-color: #000;
@@ -103,3 +105,4 @@ body {
     border-right-color: #fff;
     border-bottom-color: #fff;
 }
+
