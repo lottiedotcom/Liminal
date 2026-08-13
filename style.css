@@ -63,6 +63,7 @@ body {
     display: flex;
     flex-direction: column;
     cursor: pointer; 
+    position: relative;
 }
 
 /* Dynamic Background Colors */
@@ -86,10 +87,28 @@ body {
     word-wrap: break-word; 
 }
 
+/* Blinking Arrow for clicking to next page */
+#next-indicator {
+    display: none; /* Hidden by default */
+    text-align: right;
+    font-size: 18px;
+    color: #000;
+    animation: blink 1s infinite;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 #choices-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    z-index: 10;
 }
 
 .choice-btn {
