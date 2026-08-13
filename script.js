@@ -44,7 +44,7 @@ function showScene(sceneKey) {
 
     // Clear previous screen
     choicesDiv.innerHTML = "";
-    dialogueDiv.innerText = "";
+    dialogueDiv.textContent = ""; // Use textContent instead of innerText
 
     if (sceneKey === "ending") {
         let highestStat = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
@@ -69,17 +69,18 @@ function startTyping(dialogueDiv, choicesDiv) {
     clearInterval(typeInterval);
     
     typeInterval = setInterval(() => {
-        dialogueDiv.innerText += fullText.charAt(i);
         i++;
+        // Using slice prevents the mobile browser from collapsing spaces!
+        dialogueDiv.textContent = fullText.slice(0, i);
         if (i >= fullText.length) {
             finishTyping(choicesDiv);
         }
-    }, 25); // Lower number = faster typing speed
+    }, 25);
 }
 
 function finishTyping(choicesDiv) {
     clearInterval(typeInterval);
-    document.getElementById("dialogue-text").innerText = fullText;
+    document.getElementById("dialogue-text").textContent = fullText;
     isTyping = false;
     
     // Inject buttons only after typing finishes
@@ -89,7 +90,7 @@ function finishTyping(choicesDiv) {
             btn.className = "choice-btn";
             btn.innerText = "> " + choice.text;
             btn.onclick = (e) => {
-                e.stopPropagation(); // Prevents the click from triggering the skip function
+                e.stopPropagation(); 
                 scores[choice.stat]++;
                 showScene(choice.next);
             };
@@ -98,7 +99,6 @@ function finishTyping(choicesDiv) {
     }
 }
 
-// Click anywhere on the UI box to skip the typing animation
 document.getElementById("ui-box").addEventListener("click", () => {
     if (isTyping) {
         finishTyping(document.getElementById("choices-container"));
