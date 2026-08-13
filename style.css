@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #111;
-    font-family: sans-serif;
+    background-color: #000;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,14 +19,14 @@ body {
     background: #000;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 #image-layer {
     position: relative;
     width: 100%;
     height: 55%;
-    overflow: hidden;
+    border-bottom: 4px solid #000;
+    background-color: #111;
 }
 
 #bg-img {
@@ -45,43 +45,61 @@ body {
     object-fit: contain;
 }
 
-#ui-box {
+#ui-wrapper {
     height: 45%;
-    background: rgba(20, 15, 30, 0.95);
-    border-top: 3px solid #6b46c1;
-    padding: 20px;
+    background-color: #2b2b2b;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* The 2000s Pop-Up Box */
+#ui-box {
+    background: #d4d0c8; /* Classic vintage tech gray */
+    border: 2px solid #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #000;
+    height: 100%;
+    padding: 15px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    cursor: pointer; /* Lets them know they can click */
 }
 
 #dialogue-text {
-    color: #f3e8ff;
-    font-size: 16px;
-    line-height: 1.5;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.4;
+    flex-grow: 1;
     overflow-y: auto;
-    max-height: 45%;
+    margin-bottom: 10px;
 }
 
 #choices-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
-button {
-    background: #3b2063;
-    color: #f3e8ff;
-    border: 1px solid #9f7aea;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 14px;
+/* Blocky Tech Buttons */
+.choice-btn {
+    background: #000080; /* Harsh tech blue */
+    color: #fff;
+    border: 2px solid #fff;
+    border-right-color: #000;
+    border-bottom-color: #000;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 13px;
     text-align: left;
     cursor: pointer;
 }
 
-button:active {
-    background: #553c9a;
+.choice-btn:active {
+    border: 2px solid #000;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
 }
-
