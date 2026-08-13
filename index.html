@@ -8,19 +8,16 @@
 </head>
 <body>
     <div id="game-container">
-        <!-- Character and Background Image Layer -->
         <div id="image-layer">
             <img id="bg-img" src="background.png" alt="Liminal Background">
             <img id="char-img" src="standing.png" alt="OC Character">
         </div>
 
-        <!-- 2000s Blocky UI Pop-Up Layer -->
         <div id="ui-wrapper">
-            <div id="ui-box">
+            <!-- This box will change colors using JS -->
+            <div id="ui-box" class="narration-bg">
                 <div id="dialogue-text">Loading...</div>
-                <div id="choices-container">
-                    <!-- Buttons will inject here after typing finishes -->
-                </div>
+                <div id="choices-container"></div>
             </div>
         </div>
     </div>
